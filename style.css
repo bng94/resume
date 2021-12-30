@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resume {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "name photo"
+    "projects education"
+    "projects coursework"
+    "work skills";
+}
+
+.resume section {
+  padding: 1em 1em 1em 1em;
+}
+
+.heading {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+  margin: 1.8rem 0;
+}
+
+.name h1 {
+  font-size: 2rem;
+}
+
+.photo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: photo;
+  text-align: center;
+}
+
+.photo img {
+  border-radius: 50%;
+  max-width: 50%;
+  height: auto;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.subtitle {
+  color: #8d8d8d;
+  font-size: 0.9rem;
+}
+.subtitle span {
+  color: #1d85e6;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0 25px;
+  font-size: 0.85rem;
+}
+
+/* changed from about to coursework */
+.coursework {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: coursework;
+}
+
+/* community into projects */
+.projects {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: projects;
+}
+
+.project,
+.edu {
+  padding-bottom: 1rem;
+}
+
+.work {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: work;
+}
+
+.education {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: education;
+}
+
+.edu ul,
+.coursework ul {
+  padding: 0;
+  list-style: none;
+}
+
+.edu ul span {
+  font-weight: bold;
+}
+
+.skills {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: skills;
+}
+
+@media (max-width: 1200px) {
+  .name {
+    text-align: center;
+  }
+
+  .resume {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "photo"
+      "name"
+      "education"
+      "coursework"
+      "skills"
+      "projects"
+      "work"
+      "references";
+  }
+
+  .name {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+
+  .photo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .coursework {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+
+  .projects {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+  }
+
+  .work {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+  }
+
+  .education {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  .skills {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+}
+
+@media print {
+  /* remove any screen only styles, for example link underline */
+  .name {
+    text-align: left;
+    margin: 2rem 0;
+  }
+  .resume {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "name photo"
+      "projects education"
+      "projects coursework"
+      "work skills";
+  }
+  .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .photo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .coursework {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .projects {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  .work {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .education {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .skills {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+}
+
+@page {
+  padding: 0;
+  margin: 0cm;
+  size: A4 portrait;
+}
